@@ -1,0 +1,15 @@
+He generado 3 tipos de datos:
+- en el directorio datos0 hay pocos datos: solo 100 productos diferentes y 3 providores. Es solamente para tener un pequeño modelo. 
+- en el directorio datos hay 1000 productos diferentes y 10 providores, y la probabilidad de que 2 productos diferentes se han comprado al mismo tiempo es de 0.2.
+- en el directorio datos_bis hay 1000 productos diferentes y 10 providores, pero la probabilidad de que 2 productos diferentes se han comprado al mismo tiempo es solo de 0.1.
+
+Los datos se han generado con el lenguaje Python. Primero, he generado los r providores (r=3 o r=10). Un providor tiene los atributos siguientes:
+- id (entero)
+- name (nombre)
+Después, he generado los N productos (N=100 o N=1000). Un producto tiene los atributos siguientes:
+- id (entero)
+- name (nombre)
+- provider (entero, que referencia a un provider, y que es elegido aleatoriamente entre los r providores creados antes)
+- price (precio)
+- units (numero de unidades que hay)
+Por fin, he generado la matriz T con una doble bucle. Para la mitad de la matriz, cuando la linea i es menor que la columna j, generamos un numero aleatorio entre 0 y 1. Si este numero es menor que 0.2 (o 0.1), T[i,j]=1; si no, T[i,j]=0. En la diagonal (cuando i=j), T[i,i]=1. Cuando i > j, T[i,j] = T[j,i] (porque la matriz es simétrica). 
